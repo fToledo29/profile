@@ -6,9 +6,9 @@ import Header from './components/header/header';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
         <Header></Header>
-      </header>
+      {/* <header className="App-header">
+      </header> */}
     </div>
   );
 }

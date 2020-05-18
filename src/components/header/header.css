@@ -1,0 +1,26 @@
+.header__options {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.header__options li {
+	list-style: none;
+	height: 100%;
+	width: calc(100% / 3);
+	min-width: 20rem;
+	background-color: #ecec;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: ease 1s all;
+}
+
+.header {
+	padding: 5px;
+	position: relative;
+	height: 16rem;
+}
