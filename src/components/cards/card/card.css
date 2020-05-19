@@ -1,0 +1,16 @@
+.card {
+	width: 17.5rem;
+	height: 15rem;
+	padding: 0px;
+	overflow: hidden;
+	border-radius: 5%;
+	background-color: #ececec;
+	margin-bottom: .5rem;
+	margin-left: .06rem;
+}
+
+.card img {
+	position: relative;
+	width: 30rem;
+	left: -150px;
+}

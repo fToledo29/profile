@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300&family=Lobster&display=swap');
+
 .App {
   text-align: center;
   padding: 0;
   height: 100%;
-  width: 100%
+  width: 100%;
+  font-family: 'Kalam', cursive;
 }
 
 .App-logo {

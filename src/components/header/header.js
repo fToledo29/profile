@@ -6,7 +6,7 @@ const Header = () => {
 		<div className='header'>
 			<ul className='header__options'>
 				<li>
-					<h1>Ludmi...</h1>	
+					<h1>Ludmila Dyomina</h1>	
 				</li>
 				<li>
 					<h2>About</h2>	
