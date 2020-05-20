@@ -13,27 +13,33 @@ const Cards = () => {
 	return (
 		<div className="cards">
 			<Card 
+			smallDesc=' Praesent non maximus eros. Aenean convallis sollicitudin euismod.'
 			alt="Sample alt"
 			url={niceImage} />
 
-			<Card 
+			<Card
+			smallDesc='Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
 			alt="Sample alt"
 			url={niceImage2} />
 
-			<Card 
+			<Card
+			smallDesc='Aliquam in sapien eleifend, convallis lorem laoreet, eleifend elit. '
 			alt="Sample alt"
 			url={niceImage3} />
 
-			<Card 
+			<Card
+			smallDesc='Nulla tempus sem eget maximus venenatis. Praesent et mauris magna. '
 			alt="Sample alt"
 			url={niceImage4} />
 
 
-			<Card 
+			<Card
+			smallDesc='Nullam nisi neque, ullamcorper pellentesque molestie ac, pulvinar ut velit.'
 			alt="Sample alt"
 			url={niceImage5} />
 
-			<Card 
+			<Card
+			smallDesc='Praesent ac fringilla lectus. Fusce nulla magna, sagittis ac gravida condimentum, elementum at lorem.'
 			alt="Sample alt"
 			url={niceImage6} />
 		</div>

@@ -1,16 +1,38 @@
 .card {
-	width: 17.5rem;
+	width: 20.5rem;
 	height: 15rem;
 	padding: 0px;
 	overflow: hidden;
 	border-radius: 5%;
 	background-color: #ececec;
 	margin-bottom: .5rem;
-	margin-left: .06rem;
+	transition: all 2s 1s;
+	border: 0.72rem solid #9473b0;
+	position: relative;
 }
 
 .card img {
 	position: relative;
 	width: 30rem;
 	left: -150px;
+}
+.card-overlay {
+	background-color: #ececec;
+	width: 20.5rem;
+	height: 0rem;
+}
+
+.card:hover .card-overlay {
+	position: absolute;
+	background-color: rgba(214, 183, 226, 0.8);
+	z-index: 3;
+	width: 20.5rem;
+	height: 15rem;
+	top: 0px;
+	left: 0px;
+	font-size: 1.5em;
+	font-weight: bold;
+	align-items: center;
+	display: flex;
+	transition: height 1s;
 }

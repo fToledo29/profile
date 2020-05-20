@@ -7,7 +7,10 @@ const Card = (props) => {
 			<img 
 			alt={props.alt} 
 			src={props.url}/>
-			<span>{props.smallDesc}</span>
+			<div className='card-overlay'>
+				<span>{props.smallDesc}</span>
+			</div>
+
 		</div>
 	);
 };
