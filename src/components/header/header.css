@@ -34,3 +34,14 @@
 	position: relative;
 	height: 16rem;
 }
+
+
+.header-options-title {
+	position: absolute;
+}
+.header-options-image {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	opacity: 35%;
+}

@@ -1,22 +1,76 @@
 import React from 'react';
 import './header.css';
 
-const Header = () => {
-	return (
-		<div className='header'>
-			<ul className='header__options'>
-				<li>
-					<h1>Ludmila Dyomina</h1>	
-				</li>
-				<li>
-					<h2>About</h2>	
-				</li>
-				<li>
-					<h2>Contact</h2>	
-				</li>
-			</ul>
-		</div>
-	);
-};
+import storage from '../../firebase';
+
+ class Header extends React.Component{
+	
+	state;
+
+	constructor(props) {
+		super(props);
+		this.state = {
+			imageUrls: []
+		};
+	}
+
+	componentDidMount() {
+
+		const self = this; 
+
+		const pathReference = storage.ref(); //`${image}.jpg`);
+		// /portfolio/assets/images/cards
+		const listRef = pathReference.child('/portfolio/assets/images/menu-options');
+	
+		// Find all the prefixes and items.
+		listRef.listAll().then(function(res) {
+			// res.prefixes.forEach(function(folderRef) {
+			// // All the prefixes under listRef.
+			// // You may call listAll() recursively on them.
+			// });
+			res.items.forEach(function(itemRef) {
+			// All the items under listRef.
+				itemRef.getDownloadURL().then((file) => {
+					// images.push(file);
+					const newUrls = self.state.imageUrls.slice();
+					newUrls.push(file);
+					self.setState({ imageUrls: newUrls });
+					// state.images.push(file);
+					// setState({ ...state, images: [...state.images, state.images] });
+				});
+			});
+		}).catch(function(error) {
+			console.log('Error getting images from storage: ', error);
+		});
+	  
+	
+	}
+
+
+	render() {
+		return (
+			<div className='header'>
+				<ul className='header__options'>
+					<li>
+						<h1 className='header-options-title'>Ludmila Dyomina</h1>
+						<img className='header-options-image'
+						alt="Ludi" src={this.state.imageUrls[0]} />
+					</li>
+					<li>
+						<h2 className='header-options-title'>About</h2>	
+						<img className='header-options-image'
+						alt="About" src={this.state.imageUrls[0]} />
+					</li>
+					<li>
+						<h2 className='header-options-title'>Contact</h2>
+						<img className='header-options-image'
+						alt="Contact"
+						src={this.state.imageUrls[0]} />
+					</li>
+				</ul>
+			</div>
+		);
+	}
+}
 
 export default Header;	
