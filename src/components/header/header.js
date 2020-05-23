@@ -50,20 +50,20 @@ import storage from '../../firebase';
 	render() {
 		return (
 			<div className='header'>
-				<ul className='header__options'>
-					<li>
-						<h1 className='header-options-title'>Ludmila Dyomina</h1>
-						<img className='header-options-image'
+				<ul className='header-options'>
+					<li className='option'>
+						<h1 className='option-title'>Ludmila Dyomina</h1>
+						<img className='option-image'
 						alt="Ludi" src={this.state.imageUrls[0]} />
 					</li>
-					<li>
-						<h2 className='header-options-title'>About</h2>	
-						<img className='header-options-image'
+					<li className='option'>
+						<h2 className='option-title'>About</h2>	
+						<img className='option-image'
 						alt="About" src={this.state.imageUrls[0]} />
 					</li>
-					<li>
-						<h2 className='header-options-title'>Contact</h2>
-						<img className='header-options-image'
+					<li className='option'>
+						<h2 className='option-title'>Contact</h2>
+						<img className='option-image'
 						alt="Contact"
 						src={this.state.imageUrls[0]} />
 					</li>
