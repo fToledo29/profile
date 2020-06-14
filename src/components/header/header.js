@@ -2,6 +2,7 @@ import React from 'react';
 import './header.css';
 
 import storage from '../../firebase';
+import MenuOption from './menu-option/menu-option';
 
  class Header extends React.Component{
 	
@@ -18,25 +19,19 @@ import storage from '../../firebase';
 
 		const self = this; 
 
-		const pathReference = storage.ref(); //`${image}.jpg`);
-		// /portfolio/assets/images/cards
+		const pathReference = storage.ref();
+
 		const listRef = pathReference.child('/portfolio/assets/images/menu-options');
 	
 		// Find all the prefixes and items.
 		listRef.listAll().then(function(res) {
-			// res.prefixes.forEach(function(folderRef) {
-			// // All the prefixes under listRef.
-			// // You may call listAll() recursively on them.
-			// });
+
 			res.items.forEach(function(itemRef) {
 			// All the items under listRef.
 				itemRef.getDownloadURL().then((file) => {
-					// images.push(file);
 					const newUrls = self.state.imageUrls.slice();
 					newUrls.push(file);
 					self.setState({ imageUrls: newUrls });
-					// state.images.push(file);
-					// setState({ ...state, images: [...state.images, state.images] });
 				});
 			});
 		}).catch(function(error) {
@@ -46,11 +41,22 @@ import storage from '../../firebase';
 	
 	}
 
+	options = ['Ludmila Dyomina', 'About', 'Contact'];
+
 
 	render() {
 		return (
 			<div className='header'>
 				<ul className='header-options'>
+					
+					{/* TODO: Style this correctly  */}
+					{/* {this.options.map((option) => {
+						return <li className='option'>
+							<MenuOption imageUrl={this.state.imageUrls[0]} title={option} />
+						</li>;
+					})} */}
+
+					
 					<li className='option'>
 						<h1 className='option-title'>Ludmila Dyomina</h1>
 						<img className='option-image'
