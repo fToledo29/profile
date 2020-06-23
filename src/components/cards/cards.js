@@ -8,46 +8,26 @@ const Cards = () => {
 
 	const [state, setState] = useState({imageUrls: []});
 
-	const getImages = (imgContainer) => {
+	const getImages = async (imgContainer) => {
 
-			const newState = {imageUrls: []};
-		
-			const pathReference = storage.ref();
-
-			const listRef = pathReference.child(imgContainer);
-
-			// Find all the prefixes and items.
-			listRef.listAll().then(function(res) {
-
-				let promises = [];
-				
-				res.items.forEach(function(itemRef) {
-
-					// All the items under listRef.
-					promises.push(itemRef.getDownloadURL());
-
-				});
-
-				Promise.all(promises).then((urls) => {
-
-					urls.forEach((url) => {
-
-						newState.imageUrls = [...newState.imageUrls, url];
-
-					});
-
-				}).then(() => {
-
-					setState(newState);
-
-				});
-
-
-
-			}).catch(function(error) {
-				console.log('Error getting images from storage: ', error);
-			});
+		const newState = {imageUrls: []};
 	
+		const pathReference = storage.ref();
+
+		const listRef = pathReference.child(imgContainer);
+
+		// Find all the prefixes and items.
+		const res = await listRef.listAll().catch(error => console.log('Error getting images from storage: ', error));
+
+		let promises = [];
+
+		res.items.forEach((itemRef) => promises.push(itemRef.getDownloadURL()));
+
+		const urls = await Promise.all(promises).catch(error => console.log('Error getting images from storage: ', error));
+
+		urls.forEach((url) => newState.imageUrls = [...newState.imageUrls, url]);
+
+		setState(newState);
 	}
 
 	useEffect(() => {

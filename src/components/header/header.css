@@ -60,3 +60,35 @@
 .option:hover .option-title {
 	z-index: 3;
 }
+
+/* @media only screen  and (max-width: 430px)  */
+@media only screen and (max-width: 970px) {
+	.header-options {
+		height: 50%;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		transition: ease .5s all;
+	}
+
+	.header-options .option {
+		width: 100%;
+		height: 18rem;
+		overflow: hidden;		
+	}
+
+	.header {
+		height: auto;
+	}
+	.option-image {
+		width: 100%;
+		height: auto;
+	}
+
+	.option-title {
+		margin: 0;
+	}
+	
+}

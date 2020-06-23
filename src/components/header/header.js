@@ -48,31 +48,10 @@ import MenuOption from './menu-option/menu-option';
 		return (
 			<div className='header'>
 				<ul className='header-options'>
-					
-					{/* TODO: Style this correctly  */}
-					{/* {this.options.map((option) => {
-						return <li className='option'>
-							<MenuOption imageUrl={this.state.imageUrls[0]} title={option} />
-						</li>;
-					})} */}
+					{this.options.map((option) => {
+						return <MenuOption imageUrl={this.state.imageUrls[0]} title={option} />
+					})}
 
-					
-					<li className='option'>
-						<h1 className='option-title'>Ludmila Dyomina</h1>
-						<img className='option-image'
-						alt="Ludi" src={this.state.imageUrls[0]} />
-					</li>
-					<li className='option'>
-						<h2 className='option-title'>About</h2>	
-						<img className='option-image'
-						alt="About" src={this.state.imageUrls[0]} />
-					</li>
-					<li className='option'>
-						<h2 className='option-title'>Contact</h2>
-						<img className='option-image'
-						alt="Contact"
-						src={this.state.imageUrls[0]} />
-					</li>
 				</ul>
 			</div>
 		);
