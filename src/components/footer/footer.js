@@ -1,10 +1,15 @@
 import React from 'react';
 import './footer.css';
+import imgx from '../../assets/images/footer/flowerFooter.jpg';   
 
 export const Footer = () => {
 	return (
 		<div className="footer">
-			<div className="footer-info">
+			<img 
+			alt='Footer' 
+			src={imgx}/>
+			<div className='card-overlay'></div>
+			<div className='footer-info'>
 				<ul>
 					<li>Pariatur enim officia occaecat.</li>
 					<li>Ad velit exercitation non officia esse.</li>

@@ -3,31 +3,57 @@
 	width: 100%;
 	height: 20rem;
 	background-color: aquamarine;
+	overflow: hidden;
+
 }
 
+.footer img {
+	position: absolute;
+	/* width: 111vw; */
+	left: -150px;
+}
+
+/* .card:hover .card-overlay {
+	position: absolute;
+	background-color: rgba(214, 183, 226, 0.8);
+	z-index: 3;
+	width: 20.5rem;
+	height: 15rem;
+	top: 0px;
+	left: 0px;
+	font-size: 1.5em;
+	font-weight: bold;
+	align-items: center;
+	display: flex;
+	transition: height 1s;
+} */
+
 .footer-info {
-	background-color: rgba(145, 232, 235, 0.8);
+	background-color: rgba(145, 205, 235, 0.8);
 	width: calc(100% / 3);
-	height: 9rem;
+	height: 15rem;
 	position: absolute;
 	top: 5px;
-	left: 5px;
+	left: 5rem;
+	border-radius: 5%;
 }
 
 .footer-media {
-	background-color: rgba(145, 232, 235, 0.8);
+	background-color: rgba(145, 205, 235, 0.8);
 	width: calc(100% / 3);
-	height: 9rem;
+	height: 15rem;
 	position: absolute;
 	bottom: 5px;
 	left: calc(100% / 3);
+	border-radius: 5%;
 }
 .footer-contact {
-	background-color: rgba(145, 232, 235, 0.8);
+	background-color: rgba(145, 205, 235, 0.8);
 	width: calc(100% / 3);
-	height: 9rem;
+	height: 15rem;
 	position: absolute;
 	top: 5px;
-	right: 5px;
+	right: 5rem;
+	border-radius: 5%;
 }
 
