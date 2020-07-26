@@ -41,7 +41,7 @@ import MenuOption from './menu-option/menu-option';
 	
 	}
 
-	options = ['Ludmila Dyomina', 'About', 'Contact'];
+	options = ['Fernando Toledo', 'About', 'Contact'];
 
 
 	render() {
