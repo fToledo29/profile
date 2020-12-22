@@ -1,18 +1,22 @@
 import React from 'react';
 import './header.css';
-
 import storage from '../../firebase';
 import MenuOption from './menu-option/menu-option';
+import history from "../../shared/history";
 
  class Header extends React.Component{
 	
 	state;
 
 	constructor(props) {
+	
 		super(props);
+	
 		this.state = {
 			imageUrls: []
 		};
+
+		this.goToMyProfile = this.goToMyProfile.bind(this);
 	}
 
 	componentDidMount() {
@@ -41,15 +45,38 @@ import MenuOption from './menu-option/menu-option';
 	
 	}
 
-	options = ['Fernando Toledo', 'About', 'Contact'];
+	goToMyProfile() {
+		this.props.history.push('/me');
+	}
+
+	options = [
+		{
+			title: 'Fernando Toledo',
+			action: () => {
+				history.push("/me");
+			},
+		},
+		{
+			title: 'About',
+			action: () => {},
+		},
+		{
+			title: 'Contact',
+			action: () => {},
+		},
+	];
 
 
 	render() {
 		return (
 			<div className='header'>
 				<ul className='header-options'>
-					{this.options.map((option) => {
-						return <MenuOption imageUrl={this.state.imageUrls[0]} title={option} />
+					{this.options.map((option, ind) => {
+						return <MenuOption 
+						key={ind}
+						imageUrl={this.state.imageUrls[0]} 
+						title={option.title} 
+						handleClick={option.action}/>
 					})}
 
 				</ul>
