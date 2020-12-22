@@ -1,18 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Header from './components/header/header';
-import Cards from './components/cards/cards';
-import { Footer } from './components/footer/footer';
+import Home from './components/home/home';
+import { Router, Route, Switch } from "react-router-dom";
+import MyProfile from './components/me/me';
+import history from './shared/history';
 
 function App() {
   return (
     <div className="App">
-        <Header></Header>
+	    <Router history={history}>
 
-		<Cards />
+			<Switch>
+				<Route exact path="/" component={Home}/>
+				<Route path="/me" component={MyProfile} />
+			</Switch>
 
-		<Footer />
+	    </Router>
     </div>
   );
 }
