@@ -2,4 +2,213 @@
 	margin-left: auto;
 	margin-right: auto;
 	width: 70%;
+	background-color: aquamarine;
+	border-radius: 18px;
+	padding: 1rem;
+	/* margin-top: 2rem; */
+	font-size: 1.2em;
+	position: relative;
+	top: 2rem;
+	z-index: 5;
+}
+
+.bubble-0 {
+	border-radius: 50%;
+	position: fixed;
+	/* top: 0; */
+	animation: move-buble-0 50s ease-out infinite;
+}
+
+.bubble-1 {
+	border-radius: 50%;
+	position: fixed;
+	/* top: 0; */
+	animation: move-buble-1 50s ease-out infinite;
+}
+
+.bubble-2 {
+	border-radius: 50%;
+	position: fixed;
+	/* top: 0; */
+	animation: move-buble-2 50s ease-out infinite;
+}
+
+.bubble-3 {
+	border-radius: 50%;
+	position: fixed;
+	/* top: 0; */
+	animation: move-buble-3 50s ease-out infinite;
+}
+
+.bubble-4 {
+	border-radius: 50%;
+	position: fixed;
+	/* top: 0; */
+	animation: move-buble-4 50s ease-out infinite;
+}
+
+.bubble-5 {
+	border-radius: 50%;
+	position: fixed;
+	/* top: 0; */
+	animation: move-buble-5 60s ease-out infinite;
+	animation-delay: 50;
+}
+
+@keyframes move-buble-0 {
+	0%   {
+		opacity: 0;
+	}
+	30%  {
+		opacity: 0.5;
+		top: 50%; 
+		left: 60%;
+	}
+	50%  {
+		top: 0%; 
+		left: 10%;
+	}
+	70%  {
+		top: 10%; 
+		left: 92.5%;
+	}
+	90%  {
+		top: 50%; 
+		left: 10%;
+	}
+	100% {
+		top: -10%; 
+		left: -10%;
+	}
+}
+
+@keyframes move-buble-1 {
+	100%   {
+		opacity: 0;
+	}
+	90% {
+		top: 88%; 
+		left: 50%;
+	}
+	70%  {
+		top: 0%; 
+		left: 90%;
+	}
+	50%  {
+		top: 0%; 
+		left: 52.5%;
+	}
+	30%  {
+		top: 88%; 
+		left: 20%;
+		opacity: 0.5;
+	}
+	0% {
+		top: 0%; 
+		left: 50%;
+		opacity: 0;
+	}
+}
+
+@keyframes move-buble-2 {
+	0%   {
+		opacity: 0;
+	}
+	30%  {
+		opacity: 0.5;
+		top: 5%; 
+		left: 20%;
+	}
+	50%  {
+		top: 50%; 
+		left: 0%;
+	}
+	70%  {
+		top: 50%; 
+		left: 92.5%;
+	}
+	90%  {
+		top: 88%; 
+		left: 50%;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes move-buble-3 {
+	100%   {
+		opacity: 0;
+	}
+	90% {
+		top: 88%; 
+		left: 30%;
+	}
+	70%  {
+		top: 0%; 
+		left: 10%;
+	}
+	50%  {
+		top: 80%; 
+		left: 92.5%;
+	}
+	30%  {
+		top: 8%; 
+		left: 80%;
+	}
+	0% {
+		opacity: 0;
+	}
+}
+
+@keyframes move-buble-4 {
+	100%   {
+		opacity: 0;
+	}
+	90% {
+		top: 88%; 
+		left: 10%;
+	}
+	70%  {
+		top: 0%; 
+		left: 20%;
+	}
+	50%  {
+		top: 0%; 
+		left: 0.5%;
+	}
+	30%  {
+		top: 88%; 
+		left: 0%;
+	}
+	0% {
+		top: 100%; 
+		left: 70%;
+	}
+}
+
+@keyframes move-buble-5 {
+	0%   {
+		opacity: 0;
+	}
+	30%  {
+		opacity: 1;
+		top: 88%; 
+		left: 90%;
+	}
+	50%  {
+		top: 0%; 
+		left: 80%;
+	}
+	70%  {
+		top: 40%; 
+		left: 92.5%;
+	}
+	90%  {
+		top: 88%; 
+		left: 70%;
+	}
+	100% {
+		opacity: 0;
+	}
 }
