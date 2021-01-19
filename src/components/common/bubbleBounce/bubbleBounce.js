@@ -1,161 +1,126 @@
-import React from 'react'
+import React from 'react';
 import { render } from '@testing-library/react';
-
+import Keyframes from '@keyframes/core';
+import './bubbleBounce.css';
 
 const BubbleBounce = () => {
 
-	const bubbles = [
-		{
-			size: 800,
-			color: '#6b6bda',
-		},
-		{
-			size: 400,
-			color: '#00eeff',
-		},
-		{
-			size: 700,
-			color: '#ca6f9d',
-		},
-		{
-			size: 800,
-			color: '#c300ff',
-		},
-		{
-			size: 900,
-			color: '#00eeff',
-		},
-		{
-			size: 200,
-			color: '#ff8800',
-		},
-		{
-			size: 300,
-			color: '#ca6f9d',
-		},
-		{
-			size: 400,
-			color: '#f5c542',
-		},
-		{
-			size: 400,
-			color: '#00ff80',
-		},
-		{
-			size: 100,
-			color: '#6b6bda',
-		},
-		{
-			size: 200,
-			color: '#ff8800',
-		},
-		{
-			size: 300,
-			color: '#ca6f9d',
-		},
-		{
-			size: 400,
-			color: '#c300ff',
-		},
-		{
-			size: 400,
-			color: '#00eeff',
-		},
-		{
-			size: 500,
-			color: '#6b6bda',
-		},
-		{
-			size: 600,
-			color: '#ff8800',
-		},
-		{
-			size: 100,
-			color: '#6b6bda',
-		},
-		{
-			size: 200,
-			color: '#ff8800',
-		},
-		{
-			size: 300,
-			color: '#ca6f9d',
-		},
-		{
-			size: 400,
-			color: '#f5c542',
-		},
-		{
-			size: 100,
-			color: '#6b6bda',
-		},
-		{
-			size: 200,
-			color: '#ff8800',
-		},
-		{
-			size: 300,
-			color: '#ca6f9d',
-		},
-		{
-			size: 400,
-			color: '#c300ff',
-		},
-		{
-			size: 400,
-			color: '#00ff80',
-		},
-		{
-			size: 400,
-			color: '#00eeff',
-		},
-		{
-			size: 700,
-			color: '#ca6f9d',
-		},
-		{
-			size: 800,
-			color: '#f5c542',
-		},
-		{
-			size: 900,
-			color: '#00ff80',
-		},
-	];
+	const isSupported = Keyframes.isSupported();
 
-	let animationIndex = 1;
+	let cssframeArr = Array(40);
 
-	const reandom = (max, min) => {
+	const random = (max, min) => {
 		return Math.floor(Math.random() * (max - min + 1) + min);
 	}
 
+	if (isSupported) {
+
+		let bubbleCSSFrame = '';
+
+		for (let i = 0; i < cssframeArr.length; i++) {
+			
+			bubbleCSSFrame = (i % 2 === 0 ) ? Keyframes.defineCSS([{
+				name: `move-bubble-${(i + 1)}`,
+				'0%':   {
+					opacity: 0,
+				},
+				'30%':  {
+					opacity: 0.5,
+					top: `0%`, 
+					left: `${random(0, 99)}%`,
+				},
+				'50%':  {
+					top: `100%`, 
+					left: `${random(0, 99)}%`,
+				},
+				'70%':  {
+					top: `0%`, 
+					left: `${random(0, 99)}%`,
+				},
+				'90%':  {
+					top: `100%`,
+					left: `${random(0, 99)}%`,
+				},
+				'100%': {
+					opacity: 0,
+				}
+			}]) :  Keyframes.defineCSS([{
+				name: `move-bubble-${(i + 1)}`,
+				'100%':   {
+					opacity: 0,
+				},
+				'90%':  {
+					opacity: 0.5,
+					top: `0%`, 
+					left: `${random(0, 99)}%`,
+				},
+				'70%':  {
+					top: `100%`, 
+					left: `${random(0, 99)}%`,
+				},
+				'50%':  {
+					top: `0%`, 
+					left: `${random(0, 99)}%`,
+				},
+				'30%':  {
+					top: `100%`,
+					left: `${random(0, 99)}%`,
+				},
+				'0%': {
+					opacity: 0,
+				}
+			}]) ;
+			
+			cssframeArr[i] = bubbleCSSFrame;
+		}
+
+	}
+
+	const getCSSFrame = (alternate, animationNum) => {
+
+		return Keyframes.playCSS({
+		     name: `move-bubble-${animationNum}`,
+		     duration: `${random(90, 60)}s`,
+		     timingFunction: 'ease-out',
+		     delay: '0s',
+		     iterationCount: 'infinite',
+		     direction: alternate === 1 ? 'alternate-reverse' : 'alternate',
+		 });
+	}
 
 	return (
 		<div>
-				{bubbles.map((bubble, index) => {
-				const top = reandom(1, 100);
-				const left = reandom(1, 100);
-				const animationNum = reandom(1, 10);
-				animationIndex = animationIndex < 7 ? animationIndex + 1 : 1;
+			<style>
+				{cssframeArr.map((x) => x)}
+			</style>
+				{cssframeArr.map((bubble, index) => {
+				const top = random(1, 100);
+				const left = random(1, 100);
+				const animationNum = random(1, 10);
 				const animationClass = 'bubble-' + animationNum;
-				const delay = reandom(15000, 1000);
-				const alternate = reandom(1, 2);
+				const delay = index < 5 ? random(100, 1) : random(25000, 100);
+				const alternate = random(1, 2);
+				const height = (random(100, 1100) / 4);
+				const width = height;
+				const cssAnimation = getCSSFrame(alternate, index + 1);
+
 				let res = new Promise((resol, rej)=> {
 					setTimeout(() => {
 	
 						resol( <div 
-						className={animationClass}
-						key={index} 
-						style={{
+						className={`${animationClass} bubble`}
+						key={index}
+						style={
+							{
 							borderRadius: '50%',
-							backgroundColor: bubble.color,
-							height: (bubble.size / 4), 
-							width: (bubble.size / 4),
+							backgroundColor: `#${random(100000, 999999)}`,
+							height: height,
+							width: width,
 							top: `${top}%`,
 							left: `${left}%`,
 							position: 'fixed',
 							opacity: 0.5,
-							animation: `move-buble-${animationNum} ${alternate === 1 ? '30s' : '70s'} ease-out infinite`,
+							animation: cssAnimation,
 							animationDirection: alternate === 1 ? 'alternate-reverse' : 'alternate',
 							WebkitAnimationDirection: alternate === 1 ? 'alternate-reverse' : 'alternate',
 						}} ></div>)
