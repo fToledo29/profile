@@ -93,7 +93,7 @@ const BubbleBounce = () => {
 			<style>
 				{cssframeArr.map((x) => x)}
 			</style>
-				{cssframeArr.map((bubble, index) => {
+				{isSupported ? cssframeArr.map((bubble, index) => {
 				const top = random(1, 100);
 				const left = random(1, 100);
 				const animationNum = random(1, 10);
@@ -130,7 +130,7 @@ const BubbleBounce = () => {
 				res.then((res) => {
 					render(res);
 				});
-			})}
+			}) : null}
 			
 		</div>
 	)
