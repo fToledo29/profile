@@ -24,7 +24,7 @@ const Me = () => {
 				</p>
 			</div>
 
-			<BubbleBounce />
+			<BubbleBounce bubblesQuantity={100} />
 
 		</>
 	);
