@@ -1,6 +1,6 @@
 import React from 'react';
 import Keyframes from '@keyframes/core';
-import './bubbleBounce.css';
+import './bubbleB.css';
 import { Component } from 'react';
 import Bubble from './bubble/bubble';
 
@@ -16,7 +16,6 @@ class BubbleBounce extends Component {
 		this.setBubbleCSSFram();
 
 		this.setBubbleCSSFram = this.setBubbleCSSFram.bind(this);
-
 
 	}
 
@@ -108,7 +107,6 @@ class BubbleBounce extends Component {
 
 	}
 
-
 	render() {
 		return (
 			<div>
@@ -138,8 +136,6 @@ class BubbleBounce extends Component {
 						alternate
 					};
 
-					
-					
 					return  <Bubble
 					key={index} 
 					configuration={configuration} 
