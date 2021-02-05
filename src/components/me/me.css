@@ -21,7 +21,7 @@
 }
 
 .my-profile-container .btn-container {
-	background-color: aquamarine;
+	/* background-color: aquamarine; */
 	border-radius: 18px;
 	font-size: 1.5em;
 	width: 70%;
@@ -40,6 +40,11 @@
 }
 .go-back-btn:hover {
 	border: none;
+	box-shadow: 14px 11px 8px #797575;
+	transition: all .1s;
+	width: calc(100% - 20px);
+	cursor: pointer;
+
 }
 
 .go-back-btn:focus {
@@ -49,4 +54,10 @@
 
 .go-back-btn:active {
 	border: none;
+	height: 2.9rem;
+	
+}
+
+.btn-container, .me-desc {
+	/* box-shadow: 14px 11px 8px #797575; */
 }

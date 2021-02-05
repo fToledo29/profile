@@ -3,6 +3,19 @@ import './footer.css';
 import imgx from '../../assets/images/footer/flowerFooter.jpg';   
 
 export const Footer = () => {
+
+	const twitterUser = 'fernando_29837';
+	const linkedInUser = 'fernandotoledo23';
+	const githubUser = 'fToledo29';
+	const email = 'fernandotoledo23@gmail.com';
+	const instagramUser = 'ftoledo23';
+
+
+	const twitter = 'https://twitter.com/' + twitterUser;
+	const linkedIn = 'https://www.linkedin.com/in/' + linkedInUser;
+	const github = 'https://github.com/' + githubUser;
+	const instagram = 'https://www.instagram.com/' + instagramUser
+
 	return (
 		<div className="footer">
 			<img 
@@ -11,23 +24,30 @@ export const Footer = () => {
 			<div className='card-overlay'></div>
 			<div className='footer-info'>
 				<ul>
-					<li>Pariatur enim officia occaecat.</li>
-					<li>Ad velit exercitation non officia esse.</li>
-					<li>Laboris amet commodo eiusmod amet.</li>
+					<li>
+						{twitter}
+					</li>
+					<li>
+						{github}
+					</li>
 				</ul>
 			</div>
 			<div className="footer-media">
 				<ul>
-					<li>Facebook</li>
-					<li>Tweeter</li>
-					<li>Instagram</li>
+					<li>
+						{linkedIn}
+					</li>
+					<li>
+						{email}
+					</li>
 				</ul>
 			</div>
 			<div className="footer-contact">
 				<ul>
-					<li>Pariatur enim officia occaecat.</li>
-					<li>Ad velit exercitation non officia esse.</li>
-					<li>Laboris amet commodo eiusmod amet.</li>
+					<li>
+						{instagram}
+					</li>
+					<li>Facebook</li>
 				</ul>
 			</div>
 		</div>

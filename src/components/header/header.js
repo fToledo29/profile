@@ -53,12 +53,14 @@ import history from "../../shared/history";
 		{
 			title: 'Fernando Toledo',
 			action: () => {
-				history.push("/me");
+				
 			},
 		},
 		{
-			title: 'About',
-			action: () => {},
+			title: 'About me',
+			action: () => {
+				history.push("/me");
+			},
 		},
 		{
 			title: 'Contact',

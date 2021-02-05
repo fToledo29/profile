@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import BubbleB from 'bubble-b';
 import './me.css';
 
@@ -10,7 +10,9 @@ const Me = () => {
 			<div className='my-profile-container'>
 
 				<div className="btn-container">
-					<button className="go-back-btn">Go back</button>
+					<Link to="/">
+						<button className="go-back-btn">Go back</button>
+					</Link>
 				</div>
 				
 				<div className="me-desc">
