@@ -9,7 +9,7 @@ export const Footer = () => {
 	const githubUser = 'fToledo29';
 	const email = 'fernandotoledo23@gmail.com';
 	const instagramUser = 'ftoledo23';
-	const facebookUser = '29837T'; // TODO: don't commit
+	const facebookUser = '29837T';
 
 	const [mediaTwitter, mediaTwitterChange] = useState('4x');
 	const [mediaGithub, mediaGithubChange] = useState('4x');
