@@ -4,17 +4,16 @@
 	padding: 0px;
 	overflow: hidden;
 	border-radius: 5%;
-	background-color: #ececec;
+	background-color: #adc1d4f8;
 	margin-bottom: .5rem;
 	transition: all 2s 1s;
-	border: 0.72rem solid #9473b0;
+	border: 0.72rem solid #3c6c9ef8;
 	position: relative;
 }
 
 .card img {
 	position: relative;
-	width: 30rem;
-	left: -150px;
+	width: 15rem;
 }
 .card-overlay {
 	background-color: #ececec;

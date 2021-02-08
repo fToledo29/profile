@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300&family=Lobster&display=swap');
 
 .App {
+  background-color: #192e44f8;
   text-align: center;
   padding: 0;
   height: 100%;
