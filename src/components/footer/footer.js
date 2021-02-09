@@ -10,14 +10,16 @@ export const Footer = () => {
 	const email = 'fernandotoledo23@gmail.com';
 	const instagramUser = 'ftoledo23';
 	const facebookUser = '29837T';
+	const icon4x = '4x';
+	const icon5x = '5x';
 
-	const [mediaTwitter, mediaTwitterChange] = useState('4x');
-	const [mediaGithub, mediaGithubChange] = useState('4x');
-	const [mediaEnvelop, mediaEnvelopChange] = useState('4x');
-	const [mediaLinkedIn, mediaLinkedInChange] = useState('4x');
 
-	const [mediaFacebook, mediaFacebookChange] = useState('4x');
-	const [mediaInstagram, mediaInstagramChange] = useState('4x');
+	const [mediaTwitter, mediaTwitterChange] = useState(icon4x);
+	const [mediaGithub, mediaGithubChange] = useState(icon4x);
+	const [mediaEnvelop, mediaEnvelopChange] = useState(icon4x);
+	const [mediaLinkedIn, mediaLinkedInChange] = useState(icon4x);
+	const [mediaFacebook, mediaFacebookChange] = useState(icon4x);
+	const [mediaInstagram, mediaInstagramChange] = useState(icon4x);
 
 
 	const twitter = 'https://twitter.com/' + twitterUser;
@@ -38,8 +40,8 @@ export const Footer = () => {
 					<li>
 
 						<a 
-						onMouseEnter={() => mediaTwitterChange('5x')}
-						onMouseLeave={() => mediaTwitterChange('4x')}
+						onMouseEnter={() => mediaTwitterChange(icon5x)}
+						onMouseLeave={() => mediaTwitterChange(icon4x)}
 						target="_blank" 
 						rel="noopener noreferrer" 
 						href={twitter}>
@@ -50,8 +52,8 @@ export const Footer = () => {
 					</li>
 					<li>
 						<a 
-						onMouseEnter={() => mediaGithubChange('5x')}
-						onMouseLeave={() => mediaGithubChange('4x')}
+						onMouseEnter={() => mediaGithubChange(icon5x)}
+						onMouseLeave={() => mediaGithubChange(icon4x)}
 						target="_blank" 
 						rel="noopener noreferrer" 
 						href={github}>
@@ -65,8 +67,8 @@ export const Footer = () => {
 				<ul>
 					<li>
 						<a 
-						onMouseEnter={() => mediaEnvelopChange('5x')}
-						onMouseLeave={() => mediaEnvelopChange('4x')}
+						onMouseEnter={() => mediaEnvelopChange(icon5x)}
+						onMouseLeave={() => mediaEnvelopChange(icon4x)}
 						target="_blank" 
 						rel="noopener noreferrer" 
 						href={'mailto:' + email}>
@@ -76,8 +78,8 @@ export const Footer = () => {
 					</li>
 					<li>
 						<a 
-						onMouseEnter={() => mediaLinkedInChange('5x')}
-						onMouseLeave={() => mediaLinkedInChange('4x')}
+						onMouseEnter={() => mediaLinkedInChange(icon5x)}
+						onMouseLeave={() => mediaLinkedInChange(icon4x)}
 						target="_blank" 
 						rel="noopener noreferrer" 
 						href={linkedIn}>
@@ -91,8 +93,8 @@ export const Footer = () => {
 				<ul>
 					<li>
 						<a 
-						onMouseEnter={() => mediaFacebookChange('5x')}
-						onMouseLeave={() => mediaFacebookChange('4x')}
+						onMouseEnter={() => mediaFacebookChange(icon5x)}
+						onMouseLeave={() => mediaFacebookChange(icon4x)}
 						target="_blank" 
 						rel="noopener noreferrer" 
 						href={facebook}>
@@ -102,8 +104,8 @@ export const Footer = () => {
 					</li>
 					<li>
 						<a 
-						onMouseEnter={() => mediaInstagramChange('5x')}
-						onMouseLeave={() => mediaInstagramChange('4x')}
+						onMouseEnter={() => mediaInstagramChange(icon5x)}
+						onMouseLeave={() => mediaInstagramChange(icon4x)}
 						target="_blank" 
 						rel="noopener noreferrer" 
 						href={instagram}>
