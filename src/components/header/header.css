@@ -54,7 +54,13 @@
 .option:hover {
 	cursor: pointer;
 	box-shadow: 9px 9px 15px;
-    z-index: 2;
+    	z-index: 2;
+	background: transparent;
+}
+
+.option:hover h1{
+    background: transparent;
+    color: #fff;
 }
 
 .option:hover .option-title {
@@ -91,4 +97,15 @@
 		margin: 0;
 	}
 	
+}
+
+.header::before {
+	content: ' ';
+	position: absolute;
+	background-image: url('../../assets/images/header/headerX3.svg');
+	background-repeat: no-repeat;
+	background-size: auto;
+	width: 100%;
+	height: 106%;
+	left: 0;
 }
