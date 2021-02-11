@@ -19,7 +19,6 @@
 	height: 100%;
 	width: calc(100% / 3);
 	min-width: 20rem;
-	background-color: #73a0d0f8;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -33,6 +32,8 @@
 	padding: 5px;
 	position: relative;
 	height: 16rem;
+	margin-bottom: 2rem;
+	background: linear-gradient(90deg, #0090ffee 13%, #052b54 70%);
 }
 
 
@@ -52,6 +53,7 @@
 }
 
 .option:hover {
+	/* color: #fff; */
 	cursor: pointer;
 	box-shadow: 9px 9px 15px;
     	z-index: 2;
@@ -102,10 +104,17 @@
 .header::before {
 	content: ' ';
 	position: absolute;
-	background-image: url('../../assets/images/header/headerX3.svg');
 	background-repeat: no-repeat;
 	background-size: auto;
 	width: 100%;
 	height: 106%;
 	left: 0;
+}
+
+.header-svg-bg {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	filter: drop-shadow(1px 3px 4px #fff);
 }

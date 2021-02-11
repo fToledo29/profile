@@ -6,7 +6,7 @@
 	border-radius: 5%;
 	background-color: #adc1d4f8;
 	margin-bottom: .5rem;
-	transition: all 2s 1s;
+	transition: all 1s ease;
 	border: 0.72rem solid #3c6c9ef8;
 	position: relative;
 }
@@ -15,10 +15,20 @@
 	position: relative;
 	width: 15rem;
 }
-.card-overlay {
-	background-color: #ececec;
+
+.cards .card-overlay {
+    	position: absolute;
+	background-color: rgba(214, 183, 226, 0.8);
+	z-index: 3;
 	width: 20.5rem;
-	height: 0rem;
+	height: 15rem;
+	top: -250px;
+	left: 0px;
+	font-size: 1.5em;
+	font-weight: bold;
+	align-items: center;
+	display: flex;
+	transition: all 1s;
 }
 
 .card:hover .card-overlay {
@@ -33,5 +43,13 @@
 	font-weight: bold;
 	align-items: center;
 	display: flex;
-	transition: height 1s;
+	transition: all 1s;
+}
+
+.card:hover {
+    cursor: pointer;
+    box-shadow: 9px 9px 15px;
+    z-index: 2;
+    background: transparent;
+    transition: all 1s ease;
 }

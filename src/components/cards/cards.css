@@ -1,10 +1,10 @@
 .cards {
 	min-height: calc(100vh - 266px - 320px);
-	width: 98%;
+	width: 100%;
 	position: relative;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
-	margin: auto;
-	transition: all 2s 1s;
+	transition: all 2s ease;
+	background: linear-gradient(90deg, #0090ffee 13%, #052b54 70%);
 }

@@ -3,17 +3,18 @@ import './header.css';
 import storage from '../../firebase';
 import MenuOption from './menu-option/menu-option';
 import history from "../../shared/history";
+import DOMPurify from 'dompurify';
+import {ReactComponent as SVGHeader} from '../../assets/images/header/headerX3.svg';
 
  class Header extends React.Component{
-	
-	state;
 
 	constructor(props) {
 	
 		super(props);
 	
 		this.state = {
-			imageUrls: []
+			imageUrls: [],
+			svgFile: null
 		};
 
 		this.goToMyProfile = this.goToMyProfile.bind(this);
@@ -41,8 +42,19 @@ import history from "../../shared/history";
 		}).catch(function(error) {
 			console.log('Error getting images from storage: ', error);
 		});
+
+		// TODO: make it work
+		const svgCleanFile = this.cleanSvg(<SVGHeader/>);
+
+		// console.log('svgCleanFile: ', svgCleanFile)
+
+		this.setState({svgFile: svgCleanFile});
 	  
 	
+	}
+
+	cleanSvg(svgVal) {
+		return DOMPurify.sanitize(svgVal);
 	}
 
 	goToMyProfile() {
@@ -68,10 +80,20 @@ import history from "../../shared/history";
 		},
 	];
 
-
 	render() {
 		return (
 			<div className='header'>
+
+				{/* {this.state.svgFile ?  <div dangerouslySetInnerHTML={{__html: this.state.svgFile}} ></div> : null} */}
+
+				<SVGHeader className="header-svg-bg"/>
+
+				{/* <svg width="90" height="90">       
+					<image 
+					xlinkHref="../../assets/images/header/headerX3.svg" 
+					width="90" height="90"/>    
+				</svg>
+				<img src="../../assets/images/header/headerX3.svg" alt="svgimage" /> */}
 				<ul className='header-options'>
 					{this.options.map((option, ind) => {
 						return <MenuOption 

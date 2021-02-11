@@ -1,13 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300&family=Lobster&display=swap');
 
 .App {
-  background-color: #192e44f8;
+  background: rgb(0,144,255);
+	background: linear-gradient(90deg, #0090ffee 13%, #052b54 70%);
   text-align: center;
   padding: 0;
   height: 100%;
   width: 100%;
   font-family: 'Kalam', cursive;
   transition: all 2s 1s;
+}
+
+.App .home {
+  background: linear-gradient(90deg, #0090ffee 13%, #052b54 70%);
 }
 
 .App-logo {
@@ -20,17 +25,6 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
-/* .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-} */
 
 .App-link {
   color: #61dafb;
