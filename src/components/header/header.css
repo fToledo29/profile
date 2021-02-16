@@ -117,4 +117,42 @@
 	position: absolute;
 	left: 0;
 	filter: drop-shadow(1px 3px 4px #fff);
+	z-index: 0;
+}
+
+@keyframes startSpark {
+	0% {
+		background-color: transparent;
+		box-shadow: 0 0 0px 0px transparent;
+	}
+	100% {
+		background-color: #fff;
+		box-shadow: 0 0 49px 38px #fff, 0 0 100px 38px #0a56ff, 0 0 140px 90px #7490e2;
+	}
+}
+
+div[class^='spark-state1_'] {
+	position: absolute;
+	width: 3px;
+	height: 3px;
+	border-radius: 50%;
+	background-color: #fff;
+	box-shadow: 0 0 48px 52px #fff, 0 0 100px 38px #0a56ff, 0 0 118px 79px #7490e2;
+	z-index: 1;
+	animation: startSpark ease 1s;
+	transition: all 3s ease;
+	opacity: .9;
+}
+
+.spark-state1 {
+	position: absolute;
+	top: 51%;
+	left: 99.5%;
+	width: 3px;
+	height: 3px;
+	border-radius: 50%;
+	background-color: #fff;
+	box-shadow: 0 0 49px 38px #fff, 0 0 100px 38px #0a56ff, 0 0 140px 90px #7490e2;
+	z-index: 1;
+	animation: startSpark ease 1s;
 }
