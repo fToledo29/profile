@@ -16,7 +16,7 @@ const Spark = ({sparkClass, line, delayedTime}) => {
 
 		return Keyframes.playCSS({
                         name: `move-${sparkClass}`,
-                        duration: `${random(2, 4)}s`,
+                        duration: `${random(2, 5)}s`,
                         timingFunction: 'ease-out',
                         delay: '0s',
                         iterationCount: 1,
@@ -35,9 +35,9 @@ const Spark = ({sparkClass, line, delayedTime}) => {
                 if (isSupported) { 
 
 
-                        sparkEle.style.left = leftStart;
+                        sparkEle.style.left = `${leftStart}px`;
 
-                        sparkEle.style.top = topStart
+                        sparkEle.style.top = `${topStart}px`;
 
                         sparkEle.className = sparkClass;
 
@@ -45,10 +45,10 @@ const Spark = ({sparkClass, line, delayedTime}) => {
                                 name: `move-${sparkClass}`,
                                 '0%':   {
                                         opacity: 0,
-                                },
-                                '50%':  {
                                         top: `${topStart}px`, 
                                         left: `${leftStart}px`,
+                                },
+                                '50%':  {
                                         opacity: 1,
                                 },
                                 '100%': {
@@ -60,10 +60,10 @@ const Spark = ({sparkClass, line, delayedTime}) => {
                                 name: `move-${sparkClass}`,
                                 '0%':   {
                                         opacity: 0,
-                                },
-                                '50%':  {
                                         top: `${topEnd}px`,
                                         left: `${leftEnd}px`,
+                                },
+                                '50%':  {
                                         opacity: 1,
                                 },
                                 '100%': {
@@ -125,8 +125,8 @@ const Spark = ({sparkClass, line, delayedTime}) => {
 
                         setTimeout(() => {
 
-                                const x1Int = parseInt(line.getAttribute('x1'), 10);
-                                const yInt = parseInt(line.getBBox().y, 10);
+                                const x1Int = parseInt(parseInt(line.getBoundingClientRect().x), 10);
+                                const yInt = parseInt(parseInt(line.getBoundingClientRect().y), 10);
                                 const sparkState1Class =  'spark-state1_' + x1Int.toString() + yInt.toString();
                                 const sparkEle = document.querySelector('.' + sparkClass);
                                 const topStart = line.getBoundingClientRect().top;
@@ -134,11 +134,15 @@ const Spark = ({sparkClass, line, delayedTime}) => {
                                 const leftEnd = line.getBoundingClientRect().right;
                                 const topEnd = line.getBoundingClientRect().bottom;
 
+                                console.log('Spark Element: ', sparkEle);
+
                                 if (!sparkEle) {
                                         return;
                                 }
 
-                                if (line.getBBox().height > 0) {
+                                line.classList.add(`lineOf-${sparkState1Class}`);
+
+                                if (sparkEle && line.getBoundingClientRect().height > 30) {
 
                                         const randomTime = getRandom();
 
@@ -154,7 +158,7 @@ const Spark = ({sparkClass, line, delayedTime}) => {
 
                                         }, randomTime);
 
-                                } else if (sparkEle) {
+                                } else if (sparkEle && line.getBoundingClientRect().width > 35) {
 
                                         const randomTime = getRandom();
 
@@ -178,10 +182,10 @@ const Spark = ({sparkClass, line, delayedTime}) => {
 
                 setTimeout(() => {
 
-                        if (line.getAttribute('stroke-width') === '6') {
+                        // if (line.getAttribute('stroke-width') === '6') {
                                 console.log(line);
                                 startSparking();
-                        }
+                        // }
                 
                 }, delayedTime);
 

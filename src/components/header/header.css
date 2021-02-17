@@ -116,7 +116,7 @@
 	height: 100%;
 	position: absolute;
 	left: 0;
-	filter: drop-shadow(1px 3px 4px #fff);
+	/* filter: drop-shadow(1px 3px 4px #fff); */
 	z-index: 0;
 }
 
@@ -137,9 +137,9 @@ div[class^='spark-state1_'] {
 	height: 3px;
 	border-radius: 50%;
 	background-color: #fff;
-	box-shadow: 0 0 48px 52px #fff, 0 0 100px 38px #0a56ff, 0 0 118px 79px #7490e2;
+	box-shadow: 0 0 37px 32px #fff, 0 0 100px 38px #0a56ff, 0 0 118px 79px #7490e2;
 	z-index: 1;
-	animation: startSpark ease 1s;
+	/* animation: startSpark ease 1s; */
 	transition: all 3s ease;
 	opacity: .9;
 }

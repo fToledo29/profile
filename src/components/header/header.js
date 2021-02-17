@@ -4,7 +4,8 @@ import storage from '../../firebase';
 import MenuOption from './menu-option/menu-option';
 import history from "../../shared/history";
 import DOMPurify from 'dompurify';
-import {ReactComponent as SVGHeader} from '../../assets/images/header/headerX3.3.svg';
+import {ReactComponent as SVGHeader} from '../../assets/images/header/headerX4.1.svg';
+// import {ReactComponent as SVGHeader} from '../../assets/images/header/SVG/asset_4.svg';
 import Spark from './spark/spark';
 
  class Header extends React.Component{
@@ -91,13 +92,10 @@ import Spark from './spark/spark';
 
 	changeSparkState() {
 
-		const lines = document.querySelectorAll('svg line');
-
-		const newLines = [...lines].slice(this.random(lines.length / 2, 0), this.random(lines.length, lines.length / 2));
-
-		console.log('Length: ', newLines.length);
-
-		this.setState({lines: [...lines]});
+		const lines = [...document.querySelectorAll("svg image")].filter(image => {
+			return image.getBoundingClientRect().width > 35 || image.getBoundingClientRect().height > 30;
+		});
+		this.setState({lines: lines});
 
 	}
 
@@ -107,18 +105,19 @@ import Spark from './spark/spark';
 
 				{this.state.lines ? this.state.lines.map((line, ind) => {
 					
-					const classSparkClass = 'spark-state0_' + parseInt(line.getAttribute('x1')) + parseInt(line.getBBox().y);	
+					const classSparkClass = 'spark-state0_' + parseInt(line.getBoundingClientRect().x) + parseInt(line.getBoundingClientRect().y);	
 
-					// return ((line.getAttribute('stroke-width') === '6') && 
-					// ((ind === ram1) || (ind === ram2) || (ind === ram3) ||
-					// (ind === ram4) || (ind === ram5) || (ind === ram6))) ? 
-					// <Spark key={ind} sparkClass={classSparkClass} line={line} /> : null;
-					const delay = this.random(950000, 1000);
-					// const delay = this.random(10000, 1000);
+
+					const delay = this.random(150000, 1000);
+					// const delay = this.random(2000, 1000);
 
 					console.log('delay: ', delay);
 
-					return (line.getAttribute('stroke-width') === '6') ? <Spark key={ind} sparkClass={classSparkClass} line={line} delayedTime={delay} /> : null;
+					// return (line.getAttribute('x1') === '1682.75') ? 
+					// <Spark key={ind} sparkClass={classSparkClass} line={line} delayedTime={delay} /> : null;
+				
+
+					return <Spark key={ind} sparkClass={classSparkClass} line={line} delayedTime={delay} />;
 
 				}) : null}
 
