@@ -50,6 +50,9 @@ const Spark = ({sparkClass, line, delayedTime}) => {
                                 },
                                 '50%':  {
                                         opacity: 1,
+                                        filter: 'brightness(1.2)',
+                                        // backgroundColor: '#fff',
+	                                // boxShadow: '0 0 37px 32px #fff, 0 0 100px 38px #0a56ff, 0 0 118px 79px #7490e2',
                                 },
                                 '100%': {
                                         top: `${topEnd}px`,
@@ -65,6 +68,9 @@ const Spark = ({sparkClass, line, delayedTime}) => {
                                 },
                                 '50%':  {
                                         opacity: 1,
+                                        filter: 'brightness(1.2)',
+                                        // backgroundColor: '#fff',
+	                                // boxShadow: '0 0 37px 32px #fff, 0 0 100px 38px #0a56ff, 0 0 118px 79px #7490e2',
                                 },
                                 '100%': {
                                         top: `${topStart}px`, 
@@ -76,121 +82,60 @@ const Spark = ({sparkClass, line, delayedTime}) => {
 
                 return sparkframe;
         }, [random]);
-
-        const setVerticalLine = useCallback((topStart, leftStart, leftEnd, topEnd, sparkClass, sparkEle, verticalLine) => {
-                
-                const randomNum = getRandom();
-
-                /// ****** Vertical lines ****** ///
-                // Left
-                sparkEle.style.left = leftStart;
-
-                // top 1
-                sparkEle.style.top = topStart;
-
-                // Set Spark Class
-                sparkEle.className = sparkClass;
-
-                setTimeout(() => {
-                        // Top 2
-                        sparkEle.style.top = topEnd;
-                }, randomNum);
-
-        }, [getRandom]);
-
-        const setOrizontalLine = useCallback((topStart, leftStart, leftEnd, topEnd, sparkClass, sparkEle, verticalLine) => {
-
-                const inerRandomTime1 = getRandom();
-
-                sparkEle.style.left = leftStart;
-
-                sparkEle.style.top = topStart
-
-                sparkEle.className = sparkClass;
-
-                setTimeout(() => {
-                        
-                        sparkEle.style.left = leftEnd;
-
-                }, inerRandomTime1);
-
-        }, [getRandom]);
-
-
         
         useEffect(() => {
                 const startSparking = () => {
 
-                        const randomTime = getRandom();
+                        const x1Int = parseInt(parseInt(line.getBoundingClientRect().x), 10);
+                        const yInt = parseInt(parseInt(line.getBoundingClientRect().y), 10);
+                        const dInt = parseInt(line.getCTM().d, 10);
+                        const eInt = parseInt(line.getCTM().e, 10);
+                        const sparkState1Class =  'spark-state1_' + x1Int.toString() + yInt.toString() + dInt.toString() + eInt.toString();
+                        const sparkEle = document.querySelector('.' + sparkClass);
+                        const topStart = line.getBoundingClientRect().top;
+                        const leftStart = line.getBoundingClientRect().left;
+                        const leftEnd = line.getBoundingClientRect().right;
+                        const topEnd = line.getBoundingClientRect().bottom;
 
-                        setTimeout(() => {
+                        console.log('Spark Element: ', sparkEle);
 
-                                const x1Int = parseInt(parseInt(line.getBoundingClientRect().x), 10);
-                                const yInt = parseInt(parseInt(line.getBoundingClientRect().y), 10);
-                                const sparkState1Class =  'spark-state1_' + x1Int.toString() + yInt.toString();
-                                const sparkEle = document.querySelector('.' + sparkClass);
-                                const topStart = line.getBoundingClientRect().top;
-                                const leftStart = line.getBoundingClientRect().left;
-                                const leftEnd = line.getBoundingClientRect().right;
-                                const topEnd = line.getBoundingClientRect().bottom;
+                        if (!sparkEle) {
+                                return;
+                        }
 
-                                console.log('Spark Element: ', sparkEle);
+                        line.classList.add(`lineOf-${sparkState1Class}`);
 
-                                if (!sparkEle) {
-                                        return;
-                                }
+                        if (sparkEle && line.getBoundingClientRect().height > 30) {
 
-                                line.classList.add(`lineOf-${sparkState1Class}`);
+                                const cssFrame = getCSSFrame(sparkState1Class);
 
-                                if (sparkEle && line.getBoundingClientRect().height > 30) {
+                                setCSSFrame(cssFrame);
 
-                                        const randomTime = getRandom();
+                                const sparkframe = setCSSFrames(topStart, leftStart, leftStart, topEnd, sparkState1Class, sparkEle);
 
-                                        setTimeout(() => {
+                                setAnimation(sparkframe);
 
-                                                const cssFrame = getCSSFrame(sparkState1Class);
+                        } else if (sparkEle && line.getBoundingClientRect().width > 35) {
 
-                                                setCSSFrame(cssFrame);
+                                const cssFrame = getCSSFrame(sparkState1Class);
 
-                                                const sparkframe = setCSSFrames(topStart, leftStart, leftStart, topEnd, sparkState1Class, sparkEle);
-
-                                                setAnimation(sparkframe);
-
-                                        }, randomTime);
-
-                                } else if (sparkEle && line.getBoundingClientRect().width > 35) {
-
-                                        const randomTime = getRandom();
-
-                                        setTimeout(() => {
-
-                                                const cssFrame = getCSSFrame(sparkState1Class);
-
-                                                setCSSFrame(cssFrame);
-                                                
-                                                const sparkframe = setCSSFrames(topStart, leftStart, leftEnd, topStart, sparkState1Class, sparkEle);
-
-                                                setAnimation(sparkframe);
-
-                                        }, randomTime);
-                                }
-
+                                setCSSFrame(cssFrame);
                                 
+                                const sparkframe = setCSSFrames(topStart, leftStart, leftEnd, topStart, sparkState1Class, sparkEle);
 
-                        }, randomTime);
+                                setAnimation(sparkframe);
+
+                        }
+
                 }
 
                 setTimeout(() => {
-
-                        // if (line.getAttribute('stroke-width') === '6') {
-                                console.log(line);
-                                startSparking();
-                        // }
-                
+                        console.log(line);
+                        startSparking();
                 }, delayedTime);
 
 
-        }, [line, setVerticalLine, getRandom, sparkClass, setOrizontalLine, getCSSFrame, setCSSFrames, delayedTime]);
+        }, [line, getRandom, sparkClass, getCSSFrame, setCSSFrames, delayedTime]);
 
         return (<div>
                         <style>
@@ -198,7 +143,7 @@ const Spark = ({sparkClass, line, delayedTime}) => {
                         </style>
                         <div className={sparkClass} style={{
                                 animation: cssFrame
-                        }} ></div>
+                        }}></div>
                 </div>);
 }
 

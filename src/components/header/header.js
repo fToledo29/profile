@@ -8,6 +8,7 @@ import {ReactComponent as SVGHeader} from '../../assets/images/header/headerX4.1
 // import {ReactComponent as SVGHeader} from '../../assets/images/header/SVG/asset_4.svg';
 import Spark from './spark/spark';
 
+// TODO: Implement: https://stackblitz.com/edit/gsap-react-route-animation?file=components.js
  class Header extends React.Component{
 
 	constructor(props) {
@@ -105,14 +106,14 @@ import Spark from './spark/spark';
 
 				{this.state.lines ? this.state.lines.map((line, ind) => {
 					
-					const classSparkClass = 'spark-state0_' + parseInt(line.getBoundingClientRect().x) + parseInt(line.getBoundingClientRect().y);	
+					const classSparkClass = 'spark-state0_' + 
+					parseInt(line.getBoundingClientRect().x) + 
+					parseInt(line.getBoundingClientRect().y) +  
+					parseInt(line.getCTM().d) + 
+					parseInt(line.getCTM().e);	
 
 
-					const delay = this.random(150000, 1000);
-					// const delay = this.random(2000, 1000);
-
-					console.log('delay: ', delay);
-
+					const delay = this.random(200000, 1000);
 					// return (line.getAttribute('x1') === '1682.75') ? 
 					// <Spark key={ind} sparkClass={classSparkClass} line={line} delayedTime={delay} /> : null;
 				
