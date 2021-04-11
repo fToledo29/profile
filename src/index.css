@@ -1,10 +1,13 @@
 
 html, body, #root {
-	padding: 0px;
-	margin: 0px;
-	height: 100%;
-  	width: 100%
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+    scroll-behavior: smooth;
+    transition: scroll-behavior 1s ease-in;
 }
+
 body {
   background-color: #ececec;
   margin: 0;

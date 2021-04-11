@@ -1,17 +1,46 @@
-
 .header-options {
 	height: 100%;
 	margin: 0;
 	padding: 0;
 	display: flex;
 	flex-direction: row;
-	/* flex-wrap: wrap; */
 	transition: ease .5s all;
+	z-index: 1;
 }
 
+.img-header {
+	background-image: url('../../assets/images/header/img_test/IMG_5240.jpeg');
+	min-height: 35rem;
+	background-attachment: fixed;
+	background-position: top;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+}
 
-.header-options li:first-child {
-	font-family: 'Lobster', cursive;
+.img-header {
+	width: 100%;
+	position: absolute;
+	display: block;
+	height: 100%;
+}
+
+.header .overlay-on {
+	height: 100%;
+	top: 0px;
+	position: absolute;
+	z-index: 2;
+	width: 100%;
+	background-color: rgb(68 83 189 / 30%);
+}
+
+.header .overlay-off {
+	height: 100%;
+	top: 0px;
+	position: absolute;
+	z-index: 2;
+	width: 100%;
+	background-color: rgb(68 83 189 / 30%);
 }
 
 .header-options .option {
@@ -25,20 +54,30 @@
 	transition: ease .5s all;
 	font-weight: 800;
 	font-size: 2rem;
-	
+	z-index: 2;
 }
 
 .header {
+	overflow: hidden;
 	padding: 5px;
 	position: relative;
-	height: 16rem;
-	margin-bottom: 2rem;
+	height: 35rem;
+	margin-bottom: 0rem;
 	background: linear-gradient(90deg, #0090ffee 13%, #052b54 70%);
 }
 
+.header:hover + .go-down-btn::after {
+        color: #19a2d8;
+}
 
 .option-title {
 	position: absolute;
+	color: #3d63ec;
+}
+
+.option:hover .option-title {
+	color: #19a2d8;
+	transition: ease all 1s;
 }
 
 .option-image {
@@ -52,24 +91,26 @@
 	opacity: .2;
 }
 
-.option:hover {
-	/* color: #fff; */
+li.option:hover {
 	cursor: pointer;
 	box-shadow: 9px 9px 15px;
-    	z-index: 2;
+	z-index: 2;
 	background: transparent;
+	background-color: #f0f8ff73;
 }
 
-.option:hover h1{
-    background: transparent;
-    color: #fff;
+li.option:hover .overlay-on {
+	background-color: red;
+}
+
+.option:hover h1 {
+	background: transparent;
 }
 
 .option:hover .option-title {
 	z-index: 3;
 }
 
-/* @media only screen  and (max-width: 430px)  */
 @media only screen and (max-width: 970px) {
 	.header-options {
 		height: 50%;
@@ -79,14 +120,14 @@
 		display: flex;
 		flex-direction: column;
 		transition: ease .5s all;
+		z-index: 1;
 	}
-
 	.header-options .option {
 		width: 100%;
 		height: 18rem;
-		overflow: hidden;		
+		overflow: hidden;
+		z-index: 2;
 	}
-
 	.header {
 		height: auto;
 	}
@@ -94,11 +135,9 @@
 		width: 100%;
 		height: auto;
 	}
-
 	.option-title {
 		margin: 0;
 	}
-	
 }
 
 .header::before {
@@ -116,7 +155,6 @@
 	height: 100%;
 	position: absolute;
 	left: 0;
-	/* filter: drop-shadow(1px 3px 4px #fff); */
 	z-index: 0;
 }
 
@@ -139,7 +177,6 @@ div[class^='spark-state1_'] {
 	background-color: #fff;
 	box-shadow: 0 0 37px 32px #fff, 0 0 100px 38px #0a56ff, 0 0 118px 79px #7490e2;
 	z-index: 1;
-	/* animation: startSpark ease 1s; */
 	transition: all 3s ease;
 	opacity: .9;
 }
