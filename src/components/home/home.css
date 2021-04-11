@@ -1,24 +1,5 @@
-.img-body {
-        background-image: url('../../assets/images/header/img_test/IMG_6065.JPG');
 
-        min-height: 35rem; 
-        background-attachment: fixed;
-        background-position: top;
-        background-repeat: no-repeat;
-        background-size: cover;
-        position: relative;
-}
-
-
-.img-body {
-	width: 100%;
-	position: relative;
-	display: flex;
-        align-items: center;
-
-}
-
-.home .overlay-on {
+.home .footer-overlay {
         min-height: 35rem; 
         height: 100%;
         top: 0px;
@@ -26,6 +7,7 @@
         z-index: 2;
         width: 100%;
         transition: all .3s ease-in;
+        background: rgb(83 120 160 / 86%);
 }
 
 .go-down-btn {

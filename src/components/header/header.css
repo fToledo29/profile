@@ -12,9 +12,10 @@
 	background-image: url('../../assets/images/header/img_test/IMG_5240.jpeg');
 	min-height: 35rem;
 	background-attachment: fixed;
-	background-position: top;
+	background-position: unset;
+	background-position-x: -27rem;
+	background-size: 208rem;
 	background-repeat: no-repeat;
-	background-size: cover;
 	position: relative;
 }
 
@@ -59,11 +60,9 @@
 
 .header {
 	overflow: hidden;
-	padding: 5px;
 	position: relative;
 	height: 35rem;
 	margin-bottom: 0rem;
-	background: linear-gradient(90deg, #0090ffee 13%, #052b54 70%);
 }
 
 .header:hover + .go-down-btn::after {

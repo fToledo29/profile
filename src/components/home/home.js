@@ -24,11 +24,8 @@ const Home = () => {
 			<div className="go-down-btn" onClick={() => onGoDown()}></div>
 			
 			<Cards />
-			<div className="img-body">
-				<Footer className="footer" />
-				<div className="overlay-on" ></div>
-
-			</div>
+			
+			<Footer className="footer" />
 
 
 		</div>

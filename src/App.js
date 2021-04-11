@@ -22,11 +22,14 @@ function App() {
 			const body = document.body;
 			const st = 'scrollTop';
 			const sh = 'scrollHeight';
-			const percent = ((h[st]||body[st]) / ((h[sh]||body[sh]) - h.clientHeight) * 100) + 40;
-			const item = document.querySelector(".header div[class^='overlay-'");
+			const percent = ((h[st]||body[st]) / ((h[sh]||body[sh]) - h.clientHeight) * 100) + 50;
+			const overlayHead = document.querySelector(".header div[class^='overlay-'");
+			const overlayFoot = document.querySelector(".home div[class^='footer-overlay'");			
 			const y = 1 + (window.scrollY || window.pageYOffset) / 150;
 			const [r, g, b] = [red/y, green/y, blue/y].map(Math.round);
-			item.style.backgroundColor = `rgb(${r}, ${g}, ${b}, ${percent}%)`;
+			overlayHead.style.backgroundColor = `rgb(${r}, ${g}, ${b}, ${percent}%)`;
+			const footTransparencyPercent = (100 - percent) + 80;
+			overlayFoot.style.backgroundColor = `rgb(${r}, ${g}, ${b}, ${footTransparencyPercent}%)`;
 		});
 	});
 

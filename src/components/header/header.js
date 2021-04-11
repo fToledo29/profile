@@ -90,7 +90,7 @@ import *  as profileConf from '../../assets/profile.conf.json';
 		return (
 			<div className='header'>
 
-				<img className="img-header" alt='' />
+				<div className="img-header"/>
 
 				<div className={this.state.overlayClass}></div>
 

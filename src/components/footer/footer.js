@@ -4,12 +4,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export const Footer = () => {
 
-	const twitterUser = 'fernando_29837';
+	const twitterUser = 'fernandot_23';
 	const linkedInUser = 'fernandotoledo23';
 	const githubUser = 'fToledo29';
 	const email = 'fernandotoledo23@gmail.com';
 	const instagramUser = 'ftoledo23';
-	const facebookUser = '29837T';
+	const facebookUser = 'fernandot23';
 	const icon4x = '4x';
 	const icon5x = '5x';
 
@@ -30,11 +30,8 @@ export const Footer = () => {
 
 	return (
 		<div className="footer">
-			<div 
-			className="footer-bg"
-			alt='Footer'
-			/>
-			<div className='card-overlay'></div>
+			<div className="img-footer"></div>
+			<div className="footer-overlay" ></div>
 			<div className='footer-info'>
 				<ul>
 					<li>
