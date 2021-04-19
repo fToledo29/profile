@@ -24,6 +24,7 @@ const Home = () => {
 			<div className="go-down-btn" onClick={() => onGoDown()}></div>
 			
 			<Cards />
+			<div className="go-down-btn" onClick={() => onGoDown()}></div>
 			
 			<Footer className="footer" />
 

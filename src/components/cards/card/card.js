@@ -2,8 +2,9 @@ import React from 'react';
 import './card.css';
 
 const Card = (props) => {
+	const cardClass = props.cardClass
 	return (
-		<div className='card'>
+		<div className={'card ' + cardClass}>
 			<img 
 			alt={props.alt} 
 			src={props.url}/>
