@@ -11,10 +11,15 @@ import *  as profileConf from '../../assets/profile.conf.json';
 		super(props);
 
 		this.overlayAction = { on: 'overlay-on', off: 'overlay-off'};
+		this.headerClass = {
+			overflow: 'header header-overflow',
+			noOverflow: 'header header-no-overflow'
+		};
 	
 		this.state = {
 			imageUrls: [],
 			overlayClass: this.overlayAction.on,
+			headerClass: this.headerClass.overflow
 		};
 
 		this.goToMyProfile = this.goToMyProfile.bind(this);
@@ -81,14 +86,18 @@ import *  as profileConf from '../../assets/profile.conf.json';
 
 		const action = on ? this.overlayAction.on : this.overlayAction.off;
 
-		this.setState({overlayClass: action});
+		const headerClass = on ? this.headerClass.overflow : this.headerClass.noOverflow;
+
+		const classes = {overlayClass: action, headerClass};
+
+		this.setState(classes);
 
 	}
 
 
 	render() {
 		return (
-			<div className='header'>
+			<div className={this.state.headerClass}>
 
 				<div className="img-header"/>
 

@@ -58,8 +58,16 @@
 	z-index: 2;
 }
 
-.header {
+.header-overflow {
 	overflow: hidden;
+}
+
+.header-no-overflow {
+	overflow: initial;
+}
+
+
+.header {
 	position: relative;
 	height: 35rem;
 	margin-bottom: 0rem;
