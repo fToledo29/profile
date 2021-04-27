@@ -1,21 +1,30 @@
 import React from 'react';
 import './header.css';
-
 import storage from '../../firebase';
 import MenuOption from './menu-option/menu-option';
-
- class Header extends React.Component{
-	
-	state;
+import history from "../../shared/history";
+import *  as profileConf from '../../assets/profile.conf.json';
+ class Header extends React.Component {
 
 	constructor(props) {
+	
 		super(props);
+
+		this.overlayAction = { on: 'overlay-on', off: 'overlay-off'};
+	
 		this.state = {
-			imageUrls: []
+			imageUrls: [],
+			overlayClass: this.overlayAction.on,
 		};
+
+		this.goToMyProfile = this.goToMyProfile.bind(this);
 	}
 
 	componentDidMount() {
+
+		/**
+		 * TODO: Validate if this logic can be used in the future to handle dynamic images from firebase
+		 */
 
 		const self = this; 
 
@@ -37,19 +46,62 @@ import MenuOption from './menu-option/menu-option';
 		}).catch(function(error) {
 			console.log('Error getting images from storage: ', error);
 		});
-	  
 	
 	}
 
-	options = ['Ludmila Dyomina', 'About', 'Contact'];
+	
+	random(max, min){
+		return Math.floor(Math.random() * (max - min + 1) + min);
+	}
+
+	goToMyProfile() {
+		this.props.history.push('/me');
+	}
+
+	options = [
+		{
+			title: profileConf.menu_options[1].name, // 'About me',
+			action: () => {
+				history.push("/me");
+			},
+		},
+		{
+			title: profileConf.menu_options[0].name, // 'My Experience',
+			action: () => {
+				
+			},
+		},
+		{
+			title: profileConf.menu_options[2].name, // 'My blog',
+			action: () => {},
+		},
+	];
+
+	changeOverlayClass(on) {
+
+		const action = on ? this.overlayAction.on : this.overlayAction.off;
+
+		this.setState({overlayClass: action});
+
+	}
 
 
 	render() {
 		return (
 			<div className='header'>
+
+				<div className="img-header"/>
+
+				<div className={this.state.overlayClass}></div>
+
 				<ul className='header-options'>
-					{this.options.map((option) => {
-						return <MenuOption imageUrl={this.state.imageUrls[0]} title={option} />
+					{this.options.map((option, ind) => {
+						return <MenuOption
+						key={ind}
+						imageUrl={this.state.imageUrls[0]} 
+						title={option.title} 
+						changeOverlayClass={this.changeOverlayClass.bind(this)}
+						handleClick={option.action}/>
 					})}
 
 				</ul>

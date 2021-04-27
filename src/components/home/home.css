@@ -1,0 +1,37 @@
+
+.home .footer-overlay {
+        min-height: 35rem; 
+        height: 100%;
+        top: 0px;
+        position: absolute;
+        z-index: 2;
+        width: 100%;
+        transition: all .3s ease-in;
+        background: rgb(83 120 160 / 86%);
+}
+
+.go-down-btn {
+        height: 3rem;
+        width: 5rem;
+        position: relative;
+        top: -4.3rem;
+        color: #2634dd;
+        z-index: 2;
+        margin-left: auto;
+        margin-right: auto;
+        clear: both;
+}
+
+.go-down-btn::after {
+        content: '▽';
+        font-family: 'Kalam', cursive;
+        font-size: 3em;
+        cursor: pointer;
+        transition: all ease-in .3s;
+}
+
+.go-down-btn:hover::after {
+        font-size: 4em;
+        font-weight: bolder;
+        color: #19a2d8;
+}
