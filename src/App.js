@@ -3,6 +3,7 @@ import './App.css';
 import Home from './components/home/home';
 import { Router, Route, Switch } from "react-router-dom";
 import MyProfile from './components/me/me';
+import TimelineBlog from './components/timeline/timeline';
 import history from './shared/history';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
@@ -25,11 +26,15 @@ function App() {
 			const percent = ((h[st]||body[st]) / ((h[sh]||body[sh]) - h.clientHeight) * 100) + 50;
 			const overlayHead = document.querySelector(".header div[class^='overlay-'");
 			const overlayFoot = document.querySelector(".home div[class^='footer-overlay'");			
-			const y = 1 + (window.scrollY || window.pageYOffset) / 150;
-			const [r, g, b] = [red/y, green/y, blue/y].map(Math.round);
-			overlayHead.style.backgroundColor = `rgb(${r}, ${g}, ${b}, ${percent}%)`;
-			const footTransparencyPercent = (100 - percent) + 80;
-			overlayFoot.style.backgroundColor = `rgb(${r}, ${g}, ${b}, ${footTransparencyPercent}%)`;
+			if (overlayHead && overlayFoot) {
+
+				const y = 1 + (window.scrollY || window.pageYOffset) / 150;
+				const [r, g, b] = [red/y, green/y, blue/y].map(Math.round);
+				overlayHead.style.backgroundColor = `rgb(${r}, ${g}, ${b}, ${percent}%)`;
+				const footTransparencyPercent = (100 - percent) + 80;
+				overlayFoot.style.backgroundColor = `rgb(${r}, ${g}, ${b}, ${footTransparencyPercent}%)`;
+
+			}
 		});
 	});
 
@@ -40,6 +45,7 @@ function App() {
 				<Switch>
 					<Route exact path="/" component={Home}/>
 					<Route path="/me" component={MyProfile} />
+					<Route path="/timeline" component={TimelineBlog} />
 				</Switch>
 
 			</Router>
