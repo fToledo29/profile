@@ -10,11 +10,19 @@
         background: rgb(83 120 160 / 86%);
 }
 
-.go-down-btn {
+.go-down-btn_top {
+	position: relative;
+        top: -4.3rem;
+}
+
+.go-down-btn_mid {
+	position: relative;
+        top: -2.3rem;
+}
+
+div[class^='go-down-btn'] {
         height: 3rem;
         width: 5rem;
-        position: relative;
-        top: -4.3rem;
         color: #2634dd;
         z-index: 2;
         margin-left: auto;
@@ -22,7 +30,7 @@
         clear: both;
 }
 
-.go-down-btn::after {
+div[class^='go-down-btn']::after {
         content: '▽';
         font-family: 'Kalam', cursive;
         font-size: 3em;
@@ -30,7 +38,18 @@
         transition: all ease-in .3s;
 }
 
-.go-down-btn:hover::after {
+div[class^='go-up-btn']::after {
+        content: '△';
+        font-family: 'Kalam', cursive;
+        font-size: 3em;
+        cursor: pointer;
+        transition: all ease-in .3s;
+
+	/* bottom: -80px;
+    position: relative; */
+}
+
+div[class^='go-down-btn']:hover::after, div[class^='go-up-btn']:hover::after {
         font-size: 4em;
         font-weight: bolder;
         color: #19a2d8;
