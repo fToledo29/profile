@@ -20,7 +20,7 @@
         top: -2.3rem;
 }
 
-div[class^='go-down-btn'] {
+div[class^='go-down-btn_top'] {
         height: 3rem;
         width: 5rem;
         color: #2634dd;
@@ -28,6 +28,30 @@ div[class^='go-down-btn'] {
         margin-left: auto;
         margin-right: auto;
         clear: both;
+	
+}
+
+.go-down-btn_mid {
+	height: 3rem;
+        width: 5rem;
+        color: #2634dd;
+        z-index: 2;
+        margin-left: auto;
+        margin-right: auto;
+        clear: both;
+}
+
+div[class^='go-up-btn'] {
+        height: 3rem;
+        width: 5rem;
+        color: #2634dd;
+	z-index: 3;
+        margin-left: auto;
+        margin-right: auto;
+        clear: both;
+	position: absolute;
+	left: calc(100% / 3);
+    	right: calc(100% / 3);
 }
 
 div[class^='go-down-btn']::after {

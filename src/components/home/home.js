@@ -7,7 +7,6 @@ import './home.css';
 
 const Home = () => {
 
-	// TODO: Implement this function to send user to the top of the page.
 	const onGoUp = () => {
 		document.documentElement.scrollTo(0, 0);
 	}
@@ -32,8 +31,7 @@ const Home = () => {
 			<div className="go-down-btn_mid" onClick={() => onGoDown()}></div>
 			
 			<Footer className="footer" />
-			{/* // TODO: Implement this button */}
-			{/* <div className="go-down-btn_bottom" onClick={() => onGoUp()}></div> */}
+			<div className="go-up-btn" onClick={() => onGoUp()}></div>
 
 
 		</div>
