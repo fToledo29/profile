@@ -8,8 +8,8 @@
 }
 
 .img-footer {
-        background-image: url('../../assets/images/header/img_test/IMG_6065.JPG');
-
+        /* background-image: url('../../assets/images/header/img_test/IMG_6065.JPG'); */
+        background-image: url('../../assets/images/header/img_test/IMG_6065_M.JPG');
         min-height: 100%; 
         background-attachment: fixed;
         background-position: top;
