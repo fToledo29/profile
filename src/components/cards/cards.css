@@ -24,7 +24,7 @@
 	float: left;
 }
 
-.position_1 {
+/* .position_1 {
 	top: -5%;
 	left: 40%;
 	animation: card-rotation-1 ease-in-out 30s infinite;
@@ -46,7 +46,7 @@
 	top: 30%;
 	left: 15%;
 	animation: card-rotation-4 ease-in-out 30s infinite;
-}
+} */
 
 @keyframes card-rotation-1 {
 	0%, 100% {

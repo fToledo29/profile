@@ -8,6 +8,8 @@ const Cards = () => {
 
 	const [state, setState] = useState({imageUrls: []});
 
+	const [styles, setStyles] =  useState([]);
+
 	const getImages = async (imgContainer) => {
 
 		const newState = {imageUrls: []};
@@ -32,9 +34,52 @@ const Cards = () => {
 
 	useEffect(() => {
 
+		setStyles([
+			{
+				id: 0,
+				animation: `card-rotation-1 ease-in-out 30s infinite`,
+				top: '-5%',
+				left: '40%'
+			},
+			{
+				id: 1,
+				animation: `card-rotation-2 ease-in-out 30s infinite`,
+				top: '30%',
+				left: '65%'
+			},
+			{
+				id: 2,
+				animation: `card-rotation-3 ease-in-out 30s infinite`,
+				top: '60%',
+				left: '40%'
+			},
+			{
+				id: 3,
+				animation: `card-rotation-4 ease-in-out 30s infinite`,
+				top: '30%',
+				left: '15%'
+			}
+		]);
+
 		getImages(imgContainer);
 
 	}, []);
+
+	const onMouseEnter = (e, index) => {
+
+		const elements = Array.from(document.querySelectorAll('.card-container'));
+		elements.forEach(el => {
+			el.style.webkitAnimationPlayState = 'paused';
+		});
+
+	}
+
+	const onMouseLeave = () => {
+		const elements = Array.from(document.querySelectorAll('.card-container'));
+		elements.forEach(el => {
+			el.style.webkitAnimationPlayState = 'running';
+		});
+	}
 
 	return (
 		
@@ -44,7 +89,14 @@ const Cards = () => {
 
 			{state.imageUrls.map((url, index, ar) => {
 
-				return <div className={"card-container position_" + (index + 1)} key={index}>
+				const count = (index + 1);
+
+				return <div 
+				style={styles[index]}
+				onMouseEnter={(e) => onMouseEnter(e, index)} 
+				onMouseLeave={(e) => onMouseLeave(e)}
+				className={"card-container position_" + count} 
+				key={index}>
 					<Card 
 					key={index}
 					smallDesc=' Praesent non maximus eros. Aenean convallis sollicitudin euismod.'
