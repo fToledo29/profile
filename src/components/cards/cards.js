@@ -66,6 +66,10 @@ const Cards = () => {
 	}, []);
 
 	const onMouseEnter = (e, index) => {
+		document.querySelector('.position_' + (index + 1) + ' .card').style.width = '40.5rem';
+		document.querySelector('.position_' + (index + 1) + ' .card').style.height = '20rem';
+		document.querySelector('.position_' + (index + 1) + ' .card').style.zIndex = 2;
+
 
 		const elements = Array.from(document.querySelectorAll('.card-container'));
 		elements.forEach(el => {
@@ -74,11 +78,14 @@ const Cards = () => {
 
 	}
 
-	const onMouseLeave = () => {
+	const onMouseLeave = (e, index) => {
 		const elements = Array.from(document.querySelectorAll('.card-container'));
 		elements.forEach(el => {
 			el.style.webkitAnimationPlayState = 'running';
 		});
+		document.querySelector('.position_' + (index + 1) + ' .card').style.width = '';
+		document.querySelector('.position_' + (index + 1) + ' .card').style.height = '';
+		document.querySelector('.position_' + (index + 1) + ' .card').style.zIndex = 'inherit';
 	}
 
 	return (
@@ -94,14 +101,14 @@ const Cards = () => {
 				return <div 
 				style={styles[index]}
 				onMouseEnter={(e) => onMouseEnter(e, index)} 
-				onMouseLeave={(e) => onMouseLeave(e)}
+				onMouseLeave={(e) => onMouseLeave(e, index)}
 				className={"card-container position_" + count} 
 				key={index}>
 					<Card 
 					key={index}
 					smallDesc=' Praesent non maximus eros. Aenean convallis sollicitudin euismod.'
 					alt="Sample alt"
-					cardClass={(index % 2 === 0) ? 'left' : 'right'}
+					// cardClass={(index % 2 === 0) ? 'left' : 'right'}
 					url={url} />
 				</div>
 

@@ -16,38 +16,6 @@
 	position: absolute;
 }
 
-.text-card.right {
-	float: right;
-}
-
-.text-card.left {
-	float: left;
-}
-
-/* .position_1 {
-	top: -5%;
-	left: 40%;
-	animation: card-rotation-1 ease-in-out 30s infinite;
-}
-
-.position_2 {
-	top: 30%;
-	left: 65%;
-	animation: card-rotation-2 ease-in-out 30s infinite;
-}
-
-.position_3 {
-	top: 60%;
-	left: 40%;
-	animation: card-rotation-3 ease-in-out 30s infinite;
-}
-
-.position_4 {
-	top: 30%;
-	left: 15%;
-	animation: card-rotation-4 ease-in-out 30s infinite;
-} */
-
 @keyframes card-rotation-1 {
 	0%, 100% {
 		top: -5%;

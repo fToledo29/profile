@@ -10,7 +10,6 @@
 
 .img-header {
 	background-image: url('../../assets/images/header/img_test/IMG_5240_M.jpeg');
-	/* background-image: url('../../assets/images/header/img_test/IMG_5240.jpeg'); */
 	min-height: 35rem;
 	background-attachment: fixed;
 	background-position: unset;
