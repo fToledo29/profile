@@ -4,5 +4,23 @@
                 {"name": "About Me"},
                 {"name": "My Blog"}
         ],
-	"triangle": "Click on the divine triangle!"
+	"triangle": "Click on the divine triangle!",
+	"front-end-technologies": [
+		{
+			"name": "HTML",
+			"description": "More than 8 years ago I started using HTML, actually it was one of the first web technologies that I started using, now I use it everyday, there is not a single project where I haven't add or updated HTML"
+		},
+		{
+			"name": "JavaScript",
+			"description": "As a front-end developer I use JavaScript a lot, I learned it more than 7 years ago, I have create a lot of things with it and I'm always looking into improving my knowledge, I love JavaScript."
+		},
+		{
+			"name": "Angular",
+			"description": "More than 3 years ago I decided to fully focuse on front-end technologies so I learned Angular and started to work on webapps developed with this cool technology"
+		},
+		{
+			"name": "React",
+			"description": "This technology has been one of my ultimate challenges, started learning it on 2020 and with small test, chalenges, demos, courses and certificates, now I'm glad to say that even if I haven't had a cliente that uses this technology I fully understand and I have used almost all of its features."
+		}
+	]
 }

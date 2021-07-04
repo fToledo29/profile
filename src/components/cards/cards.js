@@ -2,6 +2,7 @@ import React, { useState, useEffect} from 'react';
 import Card from './card/card';
 import storage from '../../firebase';
 import './cards.css';
+import * as jsonConfig from '../../assets/profile.conf.json';
 const imgContainer = '/portfolio/assets/images/projects';
 
 const Cards = () => {
@@ -9,6 +10,8 @@ const Cards = () => {
 	const [state, setState] = useState({imageUrls: []});
 
 	const [styles, setStyles] =  useState([]);
+
+	const [width, setWidth] =  useState(null);
 
 	const getImages = async (imgContainer) => {
 
@@ -33,6 +36,10 @@ const Cards = () => {
 	}
 
 	useEffect(() => {
+
+		const windowWidth = (window.innerWidth > 0) ? window.innerWidth : window.screen.width;
+
+		setWidth(windowWidth);
 
 		setStyles([
 			{
@@ -99,15 +106,15 @@ const Cards = () => {
 				const count = (index + 1);
 
 				return <div 
-				style={styles[index]}
+				style={width > 480 ? styles[index] : null}
 				onMouseEnter={(e) => onMouseEnter(e, index)} 
 				onMouseLeave={(e) => onMouseLeave(e, index)}
 				className={"card-container position_" + count} 
 				key={index}>
 					<Card 
 					key={index}
-					smallDesc=' Praesent non maximus eros. Aenean convallis sollicitudin euismod.'
-					alt="Sample alt"
+					smallDesc={jsonConfig['front-end-technologies'][index].description}
+					alt={jsonConfig['front-end-technologies'][index].name}
 					// cardClass={(index % 2 === 0) ? 'left' : 'right'}
 					url={url} />
 				</div>

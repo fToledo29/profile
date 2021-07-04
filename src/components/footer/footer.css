@@ -94,3 +94,27 @@ div[class^='footer-'] ul {
 	align-items: center;
 	flex-direction: column;
 }
+
+@media (max-width: 480px) {
+
+	.footer {
+		display: flex;
+		justify-content: space-evenly;
+		flex-flow: column;
+		height: 70rem;
+	}
+
+	.img-footer {
+		position: absolute;
+	}
+
+	div[class^='footer-'] {
+		margin-left: auto;
+		margin-right: auto;
+		width: 80%;
+		position: relative;
+		top: auto;
+		left: auto;
+		right: auto;
+	}
+}

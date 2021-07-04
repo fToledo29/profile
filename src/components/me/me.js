@@ -19,7 +19,7 @@ const Me = () => {
 					<p>
 						My name is Fernando Toledo. I was born in Toluca State of Mexico <span role="img" aria-label="Mexico">🇲🇽</span>, 
 						I'm currently working for Wipro, a tech company <span role="img" aria-label="Laptop">💻</span> in the 
-						US <span role="img" aria-label="USA">🇺🇸</span>, I'm a UI developer <span role="img" aria-label="Technologist">🧑🏻‍💻</span>; not only I love 
+						US <span role="img" aria-label="USA">🇺🇸</span>, I'm a Front-end Developer <span role="img" aria-label="Technologist">🧑🏻‍💻</span>; not only I love 
 						JavaScript  but I also like CSS <span role="img" aria-label="Art">🎨</span>. I have been using CSS since 7 years ago, HTML 9 years ago, JavaScript 
 						8, Angular 4 years and I just started using React, I have been improving my skills learning from my coworkers, 
 						taking courses and doing some research.
