@@ -41,28 +41,30 @@ const Cards = () => {
 
 		setWidth(windowWidth);
 
+		const keyframe = windowWidth > 481 && windowWidth < 769 ? 'card-rotation-t-' : 'card-rotation-';
+
 		setStyles([
 			{
 				id: 0,
-				animation: `card-rotation-1 ease-in-out 30s infinite`,
+				animation: `${keyframe}1 ease-in-out 30s infinite`,
 				top: '-5%',
 				left: '40%'
 			},
 			{
 				id: 1,
-				animation: `card-rotation-2 ease-in-out 30s infinite`,
+				animation: `${keyframe}2 ease-in-out 30s infinite`,
 				top: '30%',
 				left: '65%'
 			},
 			{
 				id: 2,
-				animation: `card-rotation-3 ease-in-out 30s infinite`,
+				animation: `${keyframe}3 ease-in-out 30s infinite`,
 				top: '60%',
 				left: '40%'
 			},
 			{
 				id: 3,
-				animation: `card-rotation-4 ease-in-out 30s infinite`,
+				animation: `${keyframe}4 ease-in-out 30s infinite`,
 				top: '30%',
 				left: '15%'
 			}
@@ -107,15 +109,14 @@ const Cards = () => {
 
 				return <div 
 				style={width > 480 ? styles[index] : null}
-				onMouseEnter={(e) => onMouseEnter(e, index)} 
-				onMouseLeave={(e) => onMouseLeave(e, index)}
+				onMouseEnter={(e) => width > 480 ? onMouseEnter(e, index) : null} 
+				onMouseLeave={(e) => width > 480 ? onMouseLeave(e, index) : null}
 				className={"card-container position_" + count} 
 				key={index}>
 					<Card 
 					key={index}
 					smallDesc={jsonConfig['front-end-technologies'][index].description}
 					alt={jsonConfig['front-end-technologies'][index].name}
-					// cardClass={(index % 2 === 0) ? 'left' : 'right'}
 					url={url} />
 				</div>
 

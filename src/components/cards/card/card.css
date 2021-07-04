@@ -69,9 +69,24 @@
 		display: flex;
 		flex-flow: column;
 		height: 85rem;
+		align-items: center;
+	}
+
+	.card-container .card {
+		width: auto;
 	}
 
 	div.cards .card-container {
 		position: relative;
+	}
+
+	div.cards div.card-overlay {
+		overflow: scroll;
+	}
+
+	.card-overlay span {
+		height: 100%;
+		padding: .5rem;
+    		transition: all 1s;
 	}
 }

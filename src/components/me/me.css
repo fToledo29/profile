@@ -58,3 +58,16 @@
 	height: 2.9rem;
 	
 }
+
+@media (max-width: 480px) {
+
+	.my-profile-container {
+		overflow: auto;
+		padding: 3rem 0;
+	}
+
+	.my-profile-container .me-desc {
+		overflow: auto;
+		width: 85%;
+	}
+}
