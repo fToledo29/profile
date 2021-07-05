@@ -67,13 +67,13 @@ import *  as profileConf from '../../assets/profile.conf.json';
 		{
 			title: profileConf.menu_options[1].name, // 'About me',
 			action: () => {
-				history.push("/me");
+				history.push('/me');
 			},
 		},
 		{
 			title: profileConf.menu_options[0].name, // 'My Experience',
 			action: () => {
-				
+				history.push('/experience')
 			},
 		},
 		{

@@ -9,6 +9,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons'
+import Experience from './components/experience/experience';
 library.add(fab);
 library.add(fas);
 library.add(far);
@@ -46,6 +47,7 @@ function App() {
 					<Route exact path="/" component={Home}/>
 					<Route path="/me" component={MyProfile} />
 					<Route path="/timeline" component={TimelineBlog} />
+					<Route path="/experience" component={Experience} />
 				</Switch>
 
 			</Router>

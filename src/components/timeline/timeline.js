@@ -48,7 +48,7 @@ function TimelineBlog(props) {
 						<TimelineConnector />
 					</TimelineSeparator>
 					<TimelineContent>
-						<Paper elevation={3} className={classes.paper}>
+						<Paper elevation={8} className={classes.paper}>
 							<Typography variant="h6" component="h1">
 								Eat
             						</Typography>
@@ -80,7 +80,7 @@ function TimelineBlog(props) {
 						<TimelineConnector />
 					</TimelineSeparator>
 					<TimelineContent>
-						<Paper elevation={3} className={classes.paper}>
+						<Paper elevation={8} className={classes.paper}>
 							<Typography variant="h6" component="h1">
 								Code
             						</Typography>
@@ -96,7 +96,7 @@ function TimelineBlog(props) {
 						<TimelineConnector className={classes.secondaryTail} />
 					</TimelineSeparator>
 					<TimelineContent>
-						<Paper elevation={3} className={classes.paper}>
+						<Paper elevation={8} className={classes.paper}>
 							<Typography variant="h6" component="h1">
 								Sleep
             						</Typography>
@@ -111,7 +111,7 @@ function TimelineBlog(props) {
 						</TimelineDot>
 					</TimelineSeparator>
 					<TimelineContent>
-						<Paper elevation={3} className={classes.paper}>
+						<Paper elevation={8} className={classes.paper}>
 							<Typography variant="h6" component="h1">
 								Repeat
             						</Typography>
